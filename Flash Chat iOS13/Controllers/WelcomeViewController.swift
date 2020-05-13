@@ -20,10 +20,9 @@ class WelcomeViewController: UIViewController {
     }
 
     private func animateLogo() {
-        logoName.enumerated().forEach { (logoNameEnumerated) in
-             let (index, character) = logoNameEnumerated
-             Timer.scheduledTimer(withTimeInterval: 0.1 * Double(index), repeats: false) { _ in
-                 self.titleLabel.text?.append(character)
+        logoName.enumerated().forEach { character in
+        Timer.scheduledTimer(withTimeInterval: 0.1 * Double(character.offset), repeats: false) { _ in
+            self.titleLabel.text?.append(character.element)
              }
          }
     }
